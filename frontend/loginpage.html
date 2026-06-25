@@ -82,7 +82,8 @@
             messageDiv.style.display = 'none';
 
             try {
-                const response = await fetch('../backend/login.php', {
+                const API_BASE = (window.API_BASE && window.API_BASE.length) ? window.API_BASE : '../backend';
+                const response = await fetch(API_BASE + '/login.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: 'uname=' + encodeURIComponent(username) + '&psw=' + encodeURIComponent(password)
