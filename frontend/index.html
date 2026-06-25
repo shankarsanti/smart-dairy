@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dairy Management System</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/tailwind-custom.css">
+</head>
+<body>
+    <nav class="site-header">
+        <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+            <a class="site-brand" href="index.html">
+                <i class="fas fa-cow"></i>
+                <span>Dairy Management</span>
+            </a>
+            <a class="nav-link" href="loginpage.html">
+                <i class="fas fa-sign-in-alt"></i> Admin Login
+            </a>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-card">
+                <div style="padding: 3rem;">
+                    <p class="section-title">Modern Dairy Dashboard</p>
+                    <h1>Smart tools for collection, billing, and farmer management.</h1>
+                    <p>Keep your dairy operations running smoothly with a clean, responsive admin portal built for collecting milk, tracking fat and SNF, billing farmers, and generating printable receipts.</p>
+                    <div style="display:flex; flex-wrap:wrap; gap:1rem; margin-top:2rem;">
+                        <a href="loginpage.html" class="btn-primary">
+                            <i class="fas fa-sign-in-alt"></i> Admin Login
+                        </a>
+                        <a href="#features" class="btn-secondary">
+                            <i class="fas fa-info-circle"></i> Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-graph">
+                <img class="hero-image" src="images/mainimg.jpeg" alt="Dairy operations" />
+            </div>
+        </div>
+    </section>
+    
+    <section class="features-section">
+        <div class="container features-grid" id="features">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-users"></i></div>
+                <h3>Farmer Management</h3>
+                <p>Store farmer profiles, contact details, and collection history in one place.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-cow"></i></div>
+                <h3>Milk Tracking</h3>
+                <p>Record cow and buffalo milk separately with accurate quantity and quality data.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-dollar-sign"></i></div>
+                <h3>Billing System</h3>
+                <p>Generate invoices quickly and create printable receipts for every farmer.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Reports & Insights</h3>
+                <p>Monitor daily collections, payment status, and farmer performance at a glance.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container about-grid">
+        <div class="about-panel panel">
+            <h2>Designed for dairy teams</h2>
+            <p>Our system brings modern UX to traditional dairy workflows. It is optimized for fast data entry, better transparency, and mobile-friendly access.</p>
+            <ul style="padding-left: 1.1rem; margin-top: 1rem; color:#cbd5e1;">
+                <li>Simple farmer and collection registration</li>
+                <li>Clear billing with fat & SNF price tracking</li>
+                <li>Responsive design for tablets and small screens</li>
+                <li>Secure admin login and protected dashboard</li>
+            </ul>
+        </div>
+        <div class="panel" style="padding: 2.5rem; display:flex; align-items:center; justify-content:center; min-height: 280px;">
+            <div style="text-align:center;">
+                <i class="fas fa-seedling" style="font-size: 6rem; color: rgba(34, 197, 94, 0.8);"></i>
+                <p class="small-note" style="margin-top: 1rem;">A modern UI for dairy operations that feels fast, polished, and easy to use.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <p>&copy; 2026 Dairy Management System. All rights reserved.</p>
+        <p>Log in to the admin portal to manage farmers, records, and billing.</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login | Dairy Management</title>
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/all.css" />
+  <link rel="stylesheet" href="css/tailwind-custom.css" />
+</head>
+<body>
+  <div class="container site-header">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+      <a class="site-brand" href="startpage.php">
+        <i class="fas fa-tractor"></i>
+        <span>Dairy</span> Admin
+      </a>
+      <a class="nav-link" href="startpage.php">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </a>
+    </div>
+  </div>
+
+  <main class="container hero" style="padding-top: 1rem; padding-bottom: 2rem;">
+    <div class="login-grid" style="grid-template-columns: 1fr 0.9fr; align-items:center;">
+      <div class="hero-card">
+        <div style="padding: 2.5rem;">
+          <p class="section-title" style="margin-bottom: 0.5rem;">Secure Admin Access</p>
+          <h1 style="font-size: clamp(2rem, 4vw, 3.25rem); margin-bottom: 1rem;">Login to manage dairy records and billing.</h1>
+          <p class="small-note">Use your employee credentials to access the admin dashboard. If you are testing the system, demo login is provided below.</p>
+          <div class="alert-panel">
+            <strong>Demo:</strong> Username <code>12345</code>, Password <code>9908407185</code>
+          </div>
+        </div>
+      </div>
+      <div class="form-card">
+        <div style="padding: 2.5rem;">
+          <p class="section-title">Admin Login</p>
+          <form action="login.php" method="post" novalidate>
+            <div class="field-group">
+              <label for="uname">Username</label>
+              <input id="uname" name="uname" type="text" class="input-field" placeholder="Enter your username" required />
+            </div>
+            <div class="field-group">
+              <label for="psw">Password</label>
+              <input id="psw" name="psw" type="password" class="input-field" placeholder="Enter your password" required />
+            </div>
+            <button type="submit" name="data" class="btn-primary">Login</button>
+          </form>
+          <p class="footer-note" style="margin-top: 1rem;">Need help? Contact your dairy supervisor for valid access credentials.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Dairy Management System. All rights reserved.</p>
+  </footer>
+</body>
+</html>

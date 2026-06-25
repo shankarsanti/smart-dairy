@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dairy Management System - Login</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/tailwind-custom.css">
+</head>
+<body>
+    <div class="container" style="padding: 2rem 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+            <a class="site-brand" href="index.html">
+                <i class="fas fa-cow"></i>
+                <span>Dairy Management</span>
+            </a>
+            <a class="nav-link" href="index.html">
+                <i class="fas fa-home"></i> Home
+            </a>
+        </div>
+
+        <div class="login-grid" style="grid-template-columns: 1.1fr 0.9fr; align-items:center; gap:1.5rem;">
+            <div class="hero-card">
+                <div style="padding: 2.5rem;">
+                    <p class="section-title">Admin Access</p>
+                    <h1 style="margin-bottom: 1rem;">Login to manage farmer records, collections, and bills.</h1>
+                    <p class="small-note">This secure portal is designed for dairy staff: record milk collections, create invoices, and view farmer data with ease.</p>
+                    <div class="alert-panel" style="margin-top:1.5rem;">
+                        <strong>Demo credentials:</strong>
+                        <p style="margin: 0.5rem 0 0; font-family: monospace;">Employee ID: 12345 / Phone: 9908407185</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-card">
+                <div style="padding: 2.5rem;">
+                    <p class="section-title">Sign In</p>
+                    <form id="loginForm">
+                        <div class="field-group">
+                            <label for="username">Employee ID</label>
+                            <input type="text" id="username" name="uname" class="input-field" placeholder="Enter your Employee ID" required>
+                        </div>
+                        <div class="field-group">
+                            <label for="password">Phone Number</label>
+                            <input type="password" id="password" name="psw" class="input-field" placeholder="Enter your Phone Number" required>
+                        </div>
+                        <button type="submit" class="btn-primary" id="loginBtn">
+                            <span id="btnText">Sign In</span>
+                        </button>
+                    </form>
+                    <p class="footer-note" style="margin-top: 1.5rem;">If you have any trouble logging in, ask your dairy manager to refresh your account credentials.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer" style="margin-top: 2rem;">
+            <p>&copy; 2026 Dairy Management System. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const btn = document.getElementById('loginBtn');
+            const btnText = document.getElementById('btnText');
+            let messageDiv = document.getElementById('message');
+
+            if (!messageDiv) {
+                messageDiv = document.createElement('div');
+                messageDiv.id = 'message';
+                messageDiv.className = 'alert';
+                const formCard = document.querySelector('.form-card div');
+                formCard.insertBefore(messageDiv, formCard.firstChild);
+            }
+
+            btn.disabled = true;
+            btn.innerHTML = '<span class="loading-spinner"></span>Signing in...';
+            messageDiv.style.display = 'none';
+
+            try {
+                const response = await fetch('../backend/login.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: 'uname=' + encodeURIComponent(username) + '&psw=' + encodeURIComponent(password)
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    messageDiv.className = 'alert alert-success';
+                    messageDiv.innerHTML = '<i class="fas fa-check-circle"></i> ' + data.message;
+                    messageDiv.style.display = 'block';
+                    setTimeout(() => { window.location.href = '../backend/' + data.redirect; }, 1000);
+                } else {
+                    messageDiv.className = 'alert alert-danger';
+                    messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> ' + data.message;
+                    messageDiv.style.display = 'block';
+                    btn.disabled = false;
+                    btn.innerHTML = btnText.textContent;
+                }
+            } catch (error) {
+                messageDiv.className = 'alert alert-danger';
+                messageDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> An error occurred. Please try again.';
+                messageDiv.style.display = 'block';
+                btn.disabled = false;
+                btn.innerHTML = btnText.textContent;
+            }
+        });
+    </script>
+</body>
+</html>
