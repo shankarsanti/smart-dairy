@@ -250,9 +250,14 @@ Background: #f5f7fa (Light gray)
 
 ## 📞 Server Management
 
-### Start Server
+### Local PHP Server
 ```bash
 php -S localhost:8001
+```
+
+### Docker Deployment
+```bash
+docker-compose up --build
 ```
 
 ### Check Port Status
@@ -261,9 +266,9 @@ lsof -i :8001
 ```
 
 ### Access Points
-- **Public Home**: http://localhost:8001/
-- **Login Page**: http://localhost:8001/frontend/loginpage.html
-- **Dashboard** (after login): http://localhost:8001/backend/dashboard.php
+- **Public Home**: http://localhost:8000/
+- **Login Page**: http://localhost:8000/frontend/loginpage.html
+- **Dashboard** (after login): http://localhost:8000/backend/dashboard.php
 
 ## ⚙️ Configuration
 
