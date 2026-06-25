@@ -1,0 +1,9 @@
+# Ignore server-side and local development files for Vercel static deployment
+Dockerfile
+docker-compose.yml
+backend/
+database/
+README.md
+docs/
+.gitignore
+.git
