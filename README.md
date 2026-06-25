@@ -265,6 +265,10 @@ php -S localhost:8001
 docker-compose up --build
 ```
 
+- The PHP app is served on `http://localhost:8000/`
+- The PHP backend and MySQL database run together in Docker
+- The MySQL service initializes `database/dry.sql` on first startup
+
 ### Check Port Status
 ```bash
 lsof -i :8001

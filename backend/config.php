@@ -1,9 +1,9 @@
 <?php
 // Database Configuration
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'dry');
+define('DB_SERVER', getenv('DB_SERVER') ?: 'localhost');
+define('DB_USERNAME', getenv('DB_USERNAME') ?: 'root');
+define('DB_PASSWORD', getenv('DB_PASSWORD') ?: '');
+define('DB_NAME', getenv('DB_NAME') ?: 'dry');
 
 // Session Configuration
 define('SESSION_TIMEOUT', 3600); // 1 hour in seconds

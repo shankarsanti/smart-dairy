@@ -10,7 +10,10 @@ services:
     depends_on:
       - db
     environment:
-      - VIRTUAL_HOST=localhost
+      - DB_SERVER=db
+      - DB_USERNAME=dairy
+      - DB_PASSWORD=dairy123
+      - DB_NAME=dry
 
   db:
     image: mysql:8.0
@@ -24,6 +27,7 @@ services:
       - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
+      - ./database/dry.sql:/docker-entrypoint-initdb.d/dry.sql:ro
 
 volumes:
   db_data:
