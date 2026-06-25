@@ -8,6 +8,7 @@ $response = [
 ];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    header('Content-Type: application/json');
     $eid = sanitize($_POST['uname'] ?? '');
     $phno = sanitize($_POST['psw'] ?? '');
     

@@ -99,6 +99,11 @@ php -S localhost:8001
 # Admin Login: http://localhost:8001/frontend/loginpage.html
 ```
 
+### Vercel / Static Host Note
+- Vercel static deployments do not execute PHP backend files.
+- The frontend can be hosted as static assets, but the PHP backend must run on a PHP-capable server or via Docker.
+- If you host the backend separately, set `window.API_BASE` in `frontend/config.js` to the backend base URL.
+
 ### 🔑 Demo Login Credentials
 
 **Manager Account:**
